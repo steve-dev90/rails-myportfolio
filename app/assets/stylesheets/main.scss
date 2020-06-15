@@ -1,9 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+@import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do');
 @import "font-awesome";
+
+$family-sans-serif: "Nunito", sans-serif;
+$family-primary: $family-sans-serif;
 @import "bulma";
+
+.pagefooter {
+  margin-top: 15rem;
+  padding: 3rem 1.5rem 1.5rem 3rem;
+}
+
+.social-icons {
+  padding: 1.0rem 2.0rem;
+}
+
+.burger {
+  border: 0rem;
+  background-color: white;
+}
+
+.burger:focus {
+  outline: 0;
+}
+
+.hero-arrow {
+  padding-top: 4rem;
+  font-size: 2.5rem;
+}
+
+.burger-container {
+  float: right;
+  margin-right: 0.5rem;
+}
+
+.spaceship {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+}
+
+.footer .spaceship {
+  width: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.spaceship-container {
+  text-align: right;
+  padding: 8px 0px;
+}
+
+.techimg-container {
+  display: inline-block;
+}
+
+.spinner {
+  width: 100%;
+  height: 30rem;
+  text-align: center;
+  line-height: 30rem;
+  margin: auto auto;
+}
+
+
+.logo {
+  font-family: 'Nothing You Could Do', cursive;
+}
+
+.navbar {
+  margin-bottom: 0.7rem;
+}
+
+.tech-image {
+  width: 100px;
+  padding: 1.5rem 0.5rem;
+}
+
+.navbar-brand {
+  float: left;
+  margin-left: 0.5rem;
+}
+
+.title {
+  font-weight: 300;
+}
+
+.header {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.landing-content {
+  padding-bottom: 20.0rem;
+}
+
+.sub-title {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
 
 .heroimg {
   min-height: 99vh;
   max-height: 100vh;
   max-width: 100%;
   overflow: hidden;
+}
+
+.heroimg-container {
+  max-height: 100vh;
+}
+
+.projectimg {
+  padding-bottom: 1.5rem;
+}
+
+@media (max-width: 768px) {
+
+  .tech-image {
+    width: 70px;
+  }
+
+  .hero-arrow {
+    padding-top: 2rem;
+  }
+}
+
+.Modal {
+  z-index: 200;
+  position: absolute;
+  top: 5px;
+  right: 0px;
+  width: 50%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.Modal:focus{
+  outline: none;
+}
+
+.modal-item {
+  font-size: 1.9rem;
+  color: white;
+  padding-left: 2rem;
+  display: block;
+  margin-top: 1.5rem;
+  margin-bottom: 1.0rem;
+  background-color: hsl(204, 86%, 53%);
+  border: 0rem;
+}
+
+.modal-item:focus{
+  outline: 0;
+}
+
+.Overlay {
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5)
 }
