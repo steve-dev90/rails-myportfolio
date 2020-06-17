@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'json'
 
 project_list = [
   ["ShopBro2.0", 'shopbrovid.mp4', [
@@ -28,5 +29,5 @@ project_list = [
 ]
 
 project_list.each do |title, image, copy, old_project|
-  Project.create( title: title, image: image, copy: copy, old_project: old_project)
+  Project.create( title: title, image: image, copy: copy.to_json, old_project: old_project)
 end
