@@ -1,6 +1,6 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
-// import Project from './Projects'
+import Project from './Projects'
 // import About from './About'
 // import Contact from './Contact'
 import Portfolio from './Portfolio'
