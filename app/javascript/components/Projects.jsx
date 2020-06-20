@@ -7,18 +7,15 @@ class Projects extends React.Component {
   state = { projects: [] }
 
   componentDidMount() {
-    this.props.dispatch(getProjects())
+    console.log('BIFG')
     window.scrollTo(0, 0)
-  }
-
-  componentDidMount() {
     fetch('/api/v1/projects').
       then((response) => response.json()).
       then((projects) =>  this.setState({ projects }))
   }
 
   render() {
-
+    console.log(this.state.projects)
     return (
       <React.Fragment>
         <section className="Projects section">
