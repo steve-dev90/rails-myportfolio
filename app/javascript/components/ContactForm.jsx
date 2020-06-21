@@ -1,7 +1,64 @@
-// import React from 'react'
-// // import {actions, Field, Control, Errors, Form, track} from 'react-redux-form'
-// // import {sendEmail} from '../actions/contact'
-// // import { hideContactForm } from '../actions/portfolio'
+import React from 'react'
+import { Formik, Form, Field, ErrorMessage } from 'formik';
+// import {actions, Field, Control, Errors, Form, track} from 'react-redux-form'
+// import {sendEmail} from '../actions/contact'
+// import { hideContactForm } from '../actions/portfolio'
+
+const Contact = () => (
+  <React.Fragment>
+    <p>Interested in working with me? If so, send me a message.</p>
+    <Formik
+      initialValues={{ name: '', email: '', password: '' }}
+      validate={values => {
+        const errors = {};
+        if (!values.email) {
+          errors.email = 'Required';
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = 'Invalid email address';
+        }
+        if (!values.name) {errors.name = 'Required'}
+        return errors;
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2));
+          setSubmitting(false);
+        }, 400);
+      }}
+    >
+      {({ isSubmitting }) => (
+        <Form>
+          <div className="field">
+            <label className="label">Name:</label>
+              <div className="control">
+                <Field type="name" name="name" className="input has-background-white-ter" />
+                <ErrorMessage name="name" component="div" className="help has-text-info" />
+              </div>
+          </div>
+
+          <div className="field">
+            <label className="label">Email:</label>
+              <div className="control">
+                <Field type="email" name="email" className="input has-background-white-ter" />
+                <ErrorMessage name="email" component="div" className="help has-text-info" />
+              </div>
+          </div>
+
+
+          <Field type="password" name="password" />
+          <ErrorMessage name="password" component="div" />
+          <button type="submit" disabled={isSubmitting}>
+            Submit
+          </button>
+        </Form>
+      )}
+    </Formik>
+  </React.Fragment>);
+
+export default Contact;
+
 
 // const required = (val) => val && val.length
 
