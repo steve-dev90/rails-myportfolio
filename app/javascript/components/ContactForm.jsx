@@ -1,16 +1,12 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-// import {sendEmail} from '../actions/contact'
-// import { hideContactForm } from '../actions/portfolio'
 
-
-const Contact = () => (
+const ContactForm = (props) => (
   <React.Fragment>
     <p>Interested in working with me? If so, send me a message.</p>
     <Formik
       initialValues={{ name: '', subject: '', email: '', message: '' }}
       validate={values => {
-        const fieldNames = ['name', 'subject', 'email', 'message']
         const errors = {};
         if (
           !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
@@ -29,14 +25,10 @@ const Contact = () => (
           headers: { 'Content-Type': 'application/json'},
         }).
         then((response) => {
-          alert('Email sent')
-
+          setSubmitting(false)
+          props.hideContactForm()
+          handleReset
         })
-
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2));
-          setSubmitting(false);
-        }, 400);
       }}
     >
       {({ isSubmitting }) => (
@@ -83,22 +75,4 @@ const Contact = () => (
     </Formik>
   </React.Fragment>);
 
-export default Contact;
-
-
-// const required = (val) => val && val.length
-
-// class ContactForm extends React.Component {
-
-//   constructor (props) {
-//     super(props)
-//     this.handleSubmit = this.handleSubmit.bind(this)
-//   }
-
-//   handleSubmit (input) {
-//     const { dispatch } = this.props
-//     dispatch(sendEmail(input.name, input.message, input.email, input.message))
-//     dispatch(actions.reset('form_message'))
-//     dispatch(hideContactForm())
-//     window.scrollTo(0, 0)
-//   }
+export default ContactForm

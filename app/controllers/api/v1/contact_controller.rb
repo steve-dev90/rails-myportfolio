@@ -1,6 +1,5 @@
 class Api::V1::ContactController < ApplicationController
   def send_email
-    pp "FARTTTT!!!!"
     message_details = {
       name: contact_params[:name],
       subject: contact_params[:subject],
