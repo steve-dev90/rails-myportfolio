@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :projects, only: [:index]
+      post 'contact', to: 'contact#send_email'
+      # resources :contact, only: [:create]
     end
   end
 end
