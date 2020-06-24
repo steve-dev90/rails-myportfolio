@@ -58,7 +58,7 @@ const ContactForm = (props) => (
           </div>
 
           <div className="field">
-            <label className="label">Subject:</label>
+            <label className="label">Message:</label>
               <div className="control">
                 <Field type="message" name="message" className="input has-background-white-ter" />
                 <ErrorMessage name="message" component="div" className="help has-text-info" />
