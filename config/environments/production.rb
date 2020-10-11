@@ -110,14 +110,25 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
 
+  # Was usingsendgrid but got banned
+  # ActionMailer::Base.smtp_settings = {
+  #   :user_name => ENV['SENDGRID_USERNAME'],
+  #   :password => ENV['SENDGRID_PASSWORD'],
+  #   :domain => 'rails-myportfolio.herokuapp.com',
+  #   :address => 'smtp.sendgrid.net',
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :enable_starttls_auto => true
+  # }
+
   ActionMailer::Base.smtp_settings = {
-    :user_name => ENV['SENDGRID_USERNAME'],
-    :password => ENV['SENDGRID_PASSWORD'],
-    :domain => 'rails-myportfolio.herokuapp.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
+    :port           => ENV['MAILGUN_SMTP_PORT'],
+    :address        => ENV['MAILGUN_SMTP_SERVER'],
+    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
+    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
+    :domain         => 'yourapp.heroku.com',
     :authentication => :plain,
-    :enable_starttls_auto => true
   }
+  ActionMailer::Base.delivery_method = :smtp
 
 end
