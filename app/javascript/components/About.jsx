@@ -16,7 +16,7 @@ class About extends React.Component {
               <div className="column is-8">
                 <h2 className="title is-3 has-text-centered has-text-weight-semibold has-text-info">Who I am</h2>
                 <div className="content is-size-6 is-size-6-mobile has-text-justified has-text-left-mobile">
-                  <p>My name is Steve Torrens, and I am a software developer, based in Wellington, New Zealand. I have a background in mechanical engineering,
+                  <p>My name is Steve Torrens2, and I am a software developer, based in Wellington, New Zealand. I have a background in mechanical engineering,
                     operations and policy. I have just finished contracting for a small start-up called Glimp, working
                     with Ruby on Rails. At the beginning of last year, I completed a boot camp at the <a href="https://devacademy.co.nz">Enspiral Dev Academy</a> and
                     have experience in developing small applications in JavaScript and associated web technologies.
